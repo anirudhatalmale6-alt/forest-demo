@@ -39,16 +39,20 @@ Tous les compteurs de la page sont DERIVES de ces listes.
 MARQUE = 'FORESTERIE CANADIENNE — EXPORT'
 TITRE = 'catalogue export bois et produits dérivés'
 
-# Palette : sujet industriel et nord-americain. Encre froide, accent vert
-# forestier fonce. Contrastes MESURES par tests.py.
-FOND     = '#f4f6f5'
+# Palette : le client a demande « une couleur » pour la foresterie canadienne.
+# Rouge canadien en accent, sur un blanc chaud. Le vert forestier tres pale de
+# la premiere version ne se voyait pas — un accent doit se voir.
+# TOUS LES CONTRASTES SONT MESURES par tests.py, jamais estimes : le rouge est
+# la couleur ou l'on passe le plus facilement sous le seuil sans s'en rendre
+# compte, parce qu'il PARAIT sombre alors que sa luminance est moyenne.
+FOND     = '#f7f5f4'
 CARTE    = '#ffffff'
-LIGNE    = '#dde3e0'
-ENCRE    = '#12201a'
-TEXTE    = '#31423b'
-MUET     = '#57685f'
-ACCENT   = '#1f6b45'
-ACCENT_D = '#155232'
+LIGNE    = '#e4dedd'
+ENCRE    = '#1b1210'
+TEXTE    = '#40332f'
+MUET     = '#655551'
+ACCENT   = '#b01f24'
+ACCENT_D = '#8c171b'
 
 # ---------------------------------------------------------------------------
 # LES FAMILLES DE PRODUITS. Reprises du brief, dans son ordre, completees des

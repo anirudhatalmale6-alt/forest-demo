@@ -4,7 +4,23 @@ Maquette de démonstration, page unique. Bois d'œuvre résineux et feuillus,
 panneaux, contreplaqué, OSB, bois d'ingénierie, produits de bois massif, bois
 traité, pâte, papier, carton, biomasse et coproduits.
 
-En ligne : https://anirudhatalmale6-alt.github.io/forest-demo/
+En ligne :
+* français — https://anirudhatalmale6-alt.github.io/forest-demo/
+* English — https://anirudhatalmale6-alt.github.io/forest-demo/en/
+
+## Bilingue, et prouvé bilingue
+
+Les 201 chaînes du jeu de données vivent dans `src/traductions.py`, apparié
+**par index** depuis `data.py` : le français n'a jamais été retapé à la main,
+donc aucune clé ne peut être fausse. `build.py` lève une erreur si une chaîne
+n'a pas de traduction — la page anglaise ne peut pas se construire à moitié
+traduite.
+
+Et le test le vérifie sur la page rendue : il prend les 201 chaînes françaises
+et exige qu'aucune ne survive dans la page anglaise. Deux exceptions, nommées
+explicitement — une traduction identique au français (« Ontario »), et les
+**noms de ports**, qui sont des noms propres. « Québec » désigne la province,
+traduite en « Quebec », et la ville portuaire, conservée telle quelle.
 
 ## Trois axes, pas deux
 
@@ -44,8 +60,9 @@ si le tableau des ports contient ne serait-ce qu'un chiffre.
 
 ```
 cd src
-python3 build.py ../index.html   # refuse de construire si une donnée est incohérente
-python3 tests.py                 # 70 contrôles dans un vrai navigateur
+python3 build.py ../index.html fr      # refuse de construire si une donnée est incohérente
+python3 build.py ../en/index.html en   # ou si une traduction manque
+python3 tests.py                       # 150 contrôles, les deux langues
 ```
 
 ### Contrôle négatif
